@@ -1,0 +1,113 @@
+.calculator {
+  width: 100%;
+  min-height: 480px;
+  background: white;
+  border-radius: 1.5rem;
+  box-shadow: 0 2rem 2.5rem rgba($Very-dark-cyan, 0.1);
+  padding: useClamp(768, 964, 1.5, 2);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem useClamp(768, 964, 1, 2);
+
+  @include tablet {
+    grid-template-columns: unset;
+    max-width: 560px;
+  }
+
+  @include mobile {
+    max-width: unset;
+    border-radius: 1.5rem 1.5rem 0 0;
+    padding-bottom: 2rem;
+  }
+
+  &-controls,
+  &-output {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+  }
+
+  &-controls {
+    padding: 1rem;
+    gap: 2rem;
+
+    @include tablet {
+      padding: 1rem 0.5rem 0;
+    }
+  }
+
+  &-output {
+    background: $Very-dark-cyan;
+    border-radius: 1rem;
+    padding: useClamp(768, 964, 1.5, 2.5);
+    gap: 3.25rem;
+
+    @include tablet {
+      border-radius: 0.875rem;
+    }
+
+    @include mobile {
+      gap: 2rem;
+    }
+  }
+}
+
+.tips {
+  position: relative;
+  width: 100%;
+
+  label {
+    display: inline-flex;
+    margin-bottom: 1rem;
+  }
+
+  &-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(7rem, 1fr));
+    gap: 0.875rem;
+  }
+
+  input {
+    min-width: 5rem;
+  }
+}
+
+.output-container {
+  margin-top: 1rem;
+  width: 100%;
+
+  .output {
+    display: flex;
+    justify-content: space-between;
+    gap: 1rem;
+    align-items: center;
+
+    &:first-child {
+      margin-bottom: 3.25rem;
+
+      @include mobile {
+        margin-bottom: 2rem;
+      }
+    }
+
+    p {
+      color: $Lighter-grayish-cyan;
+      line-height: 1.25em;
+      white-space: nowrap;
+    }
+
+    small {
+      color: $Dark-grayish-cyan;
+    }
+
+    &-number {
+      font-size: useClamp(380, 440, 2, 3);
+      // font-size: 3rem;
+      color: $Strong-cyan;
+      letter-spacing: -0.024em;
+      line-height: 0;
+    }
+  }
+}
