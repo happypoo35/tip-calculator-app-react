@@ -104,10 +104,11 @@
 
     &-number {
       font-size: useClamp(380, 440, 2, 3);
-      // font-size: 3rem;
       color: $Strong-cyan;
       letter-spacing: -0.024em;
-      line-height: 0;
+      line-height: 1em;
+      text-align: right;
+      word-break: break-all;
     }
   }
 }
