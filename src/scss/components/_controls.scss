@@ -28,8 +28,10 @@ input {
     color: $Dark-grayish-cyan;
   }
 
-  &:hover {
-    box-shadow: 0 0 0 2px $Light-grayish-cyan;
+  @include desktop {
+    &:hover {
+      box-shadow: 0 0 0 2px $Light-grayish-cyan;
+    }
   }
 
   &:focus {
@@ -82,9 +84,11 @@ input {
     color: $Lighter-grayish-cyan;
     font-size: 1.5rem;
 
-    &:hover {
-      background: $Light-grayish-cyan;
-      color: $Very-dark-cyan;
+    @include desktop {
+      &:hover {
+        background: $Light-grayish-cyan;
+        color: $Very-dark-cyan;
+      }
     }
 
     &.active {
@@ -106,8 +110,10 @@ input {
       opacity: 0.2;
     }
 
-    &:hover {
-      background: $Light-grayish-cyan;
+    @include desktop {
+      &:hover {
+        background: $Light-grayish-cyan;
+      }
     }
   }
 }
