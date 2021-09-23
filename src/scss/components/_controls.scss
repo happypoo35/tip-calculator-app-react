@@ -70,7 +70,8 @@ input {
 
   input {
     width: 100%;
-    direction: rtl;
+    text-align: right;
+    caret-color: $Strong-cyan;
   }
 }
 
