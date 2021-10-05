@@ -13,7 +13,7 @@ const Output = ({ values, setValues }: props) => {
     setValues(initialValues);
   };
 
-  const speed = 100;
+  const speed = 200;
 
   useEffect(() => {
     const inc = values.total / speed;
@@ -21,7 +21,7 @@ const Output = ({ values, setValues }: props) => {
     if (countTotal < values.total && values.total - countTotal > inc) {
       setTimeout(() => setCountTotal((p) => p + inc), 1);
     } else if (countTotal > values.total) {
-      setTimeout(() => setCountTotal((p) => (p = 0 + inc)), 1);
+      setCountTotal(0);
     } else {
       setCountTotal(values.total);
     }
@@ -33,7 +33,7 @@ const Output = ({ values, setValues }: props) => {
     if (countTip < values.tipAmount && values.tipAmount - countTip > inc) {
       setTimeout(() => setCountTip((p) => p + inc), 1);
     } else if (countTip > values.tipAmount) {
-      setTimeout(() => setCountTip((p) => (p = 0 + inc)), 1);
+      setCountTip(0);
     } else {
       setCountTip(values.tipAmount);
     }
@@ -47,7 +47,6 @@ const Output = ({ values, setValues }: props) => {
             <p>Tip Amount</p>
             <small>/ person</small>
           </div>
-          {/* <span className="output-number">${values.tipAmount.toFixed(2)}</span> */}
           <span className="output-number">${countTip.toFixed(2)}</span>
         </div>
         <div className="output output-total">
@@ -55,7 +54,6 @@ const Output = ({ values, setValues }: props) => {
             <p>Total</p>
             <small>/ person</small>
           </div>
-          {/* <span className="output-number">${values.total.toFixed(2)}</span> */}
           <span className="output-number">${countTotal.toFixed(2)}</span>
         </div>
       </div>
