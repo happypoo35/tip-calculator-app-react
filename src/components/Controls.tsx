@@ -82,6 +82,7 @@ const Controls = ({ values, setValues }: props) => {
         <div className="field">
           <IconDollar />
           <input
+            tabIndex={1}
             className={errors.bill ? "error" : undefined}
             type="number"
             min="0"
@@ -101,6 +102,7 @@ const Controls = ({ values, setValues }: props) => {
         <div className="tips-container" id="tips">
           {options.map((el, id) => (
             <button
+              tabIndex={0}
               key={id}
               value={el}
               className={
@@ -129,6 +131,7 @@ const Controls = ({ values, setValues }: props) => {
         <div className="field">
           <IconPerson />
           <input
+            tabIndex={1}
             className={errors.people ? "error" : undefined}
             type="number"
             min="0"
